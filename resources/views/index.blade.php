@@ -7,7 +7,7 @@
  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <title>Document</title>
 </head>
-<body>
+<body style="padding-top: 70px;">
     <!-- header -->
 <header class=""> 
   <nav class="navbar navbar-expand-lg bg-body-tertiary opacity-75  fixed-top w-100  ">
@@ -49,12 +49,53 @@
 </header>
 <!-- home  -->
 <div style="
-    background-image: url('{{ asset('/images/da38e6ba-2eb7-4386-af70-d40f5dddadf5.jpg') }}');
+    background-image: url('{{ asset('/images/83fcb51a-b9bb-409b-a170-a5bdd1f52c45.jpg') }}');
     background-size: cover;
     background-position: center;
     width: 100vw;
-    height: 100vh;"
+    height: 100vh;">
  </div>
+ <footer style="background-color: #eef6ff;" class="text-dark py-4 mt-5 border-top">
+    <div class="container">
+        <div class="row text-center text-md-start">
+
+            <!-- Website -->
+            <div class="col-md-4 mb-3">
+                <h5 class="fw-bold text-primary">E-Learning</h5>
+                <p class="text-secondary">
+                    Learn anytime, anywhere with our online courses.
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-md-4 mb-3">
+                <h5 class="fw-bold">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="/" class="text-dark text-decoration-none">Home</a></li>
+                    <li><a href="/courses" class="text-dark text-decoration-none">Courses</a></li>
+                    <li><a href="/about" class="text-dark text-decoration-none">About</a></li>
+                    <li><a href="/contact" class="text-dark text-decoration-none">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="col-md-4 mb-3">
+                <h5 class="fw-bold">Contact</h5>
+                <p class="mb-1">📧 elearning@example.com</p>
+                <p class="mb-0">📞 +20 100 000 0000</p>
+            </div>
+
+        </div>
+
+        <hr>
+
+        <div class="text-center">
+            <small class="text-secondary">
+                &copy; 2026 E-Learning. All Rights Reserved.
+            </small>
+        </div>
+    </div>
+</footer>
 
 
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
