@@ -73,23 +73,13 @@
                                 </h5>
 
                                 <ul class="list-unstyled">
-
-                                <li class="mb-2">
-                                    ✔ PHP Basics
-                                </li>
-
-                                <li class="mb-2">
-                                    ✔ Forms & Validation
-                                </li>
-
-                                <li class="mb-2">
-                                    ✔ Database with MySQL
-                                </li>
-
-                                <li class="mb-2">
-                                    ✔ Build Real Projects
-                                </li>
-
+                                    @foreach (explode("\n",$course->what_you_will_learn) as $item)
+                                        @if(trim($item) != '')
+                                            <li class="mb-2">
+                                                ✔️ {{ $item }}
+                                            </li>
+                                        @endif
+                                    @endforeach
                                 </ul>
 
                             </div>
@@ -104,19 +94,20 @@
 
                                     <div class="d-flex align-items-center mt-3">
 
-                                    <img src="your-image.jpg"
+                                    <img src="{{ asset($course->instructor_image) }}"
                                         width="60"
                                         height="60"
-                                        class="rounded-circle me-3">
+                                        class="rounded-circle me-3"
+                                        alt="{{ $course->instructor_name }}">
 
                                     <div>
 
                                         <h6 class="mb-0">
-                                            John Doe
+                                            {{ $course->instructor_name }}
                                         </h6>
 
                                         <small class="text-muted">
-                                            Web Developer
+                                            {{ $course->instructor_job }}
                                         </small>
 
                                     </div>
