@@ -8,6 +8,7 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- header -->
 <header class=""> 
   <nav class="navbar navbar-expand-lg bg-body-tertiary opacity-75  fixed-top w-100  ">
     <nav class="navbar bg-body-tertiary">
@@ -16,7 +17,7 @@
       <img src="/images/e21f9341-d4df-4d96-a681-9760d9430cac.jpg" alt="..." width="30" height="24">
     </a>
   </div>
-</nav>
+ </nav>
   <div class="container-fluid">
     <a class="navbar-brand" href="#">E-LEARNING WEBSITE</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,33 +31,32 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Dash board</a>
         </li>
-       
-       
       </ul>
       <form class="d-flex gap-4 " role="search" style="text-">
         @if(session('user'))
     <span class="d-flex align-items-center ">Hello, {{ session('user') }}</span>
 
    <button class="btn btn-outline-primary " type="submit"> <a href="{{ route('logout') }}" style="text-decoration: none;">Logout</a></button>
-@else
+ @else
    <button class="btn btn-outline-primary" type="submit"> <a href="{{ route('login') }}" style="text-decoration: none;">Login</a></button>
 
    <button class="btn btn-outline-primary" type="submit"> <a href="{{ route('register') }}" style="text-decoration: none;">Register</a></button>
-@endif
+ @endif
       </form>
     </div>
   </div>
-</nav>
+ </nav>
 </header>
+<!-- home  -->
 <div style="
-    background-image: url('{{ asset('/images/e61e7c73-09c9-491c-8987-f9b4b7c1bc77.jpg') }}');
+    background-image: url('{{ asset('/images/da38e6ba-2eb7-4386-af70-d40f5dddadf5.jpg') }}');
     background-size: cover;
     background-position: center;
     width: 100vw;
     height: 100vh;"
  </div>
 
+
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    
 </body>
 </html>

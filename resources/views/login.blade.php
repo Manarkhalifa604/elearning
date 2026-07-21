@@ -13,6 +13,13 @@
       <div>
         <img src="/images/e21f9341-d4df-4d96-a681-9760d9430cac.jpg" alt="..." width="300" height="300">
     </div>
+    
+    @if(session('error'))
+    <div class="alert alert-danger">
+        {{ session('error') }}
+    </div>
+@endif
+
 <form action="{{ route('login.check') }}" method="POST" class="">
     @csrf
   <div class="mb-3">
