@@ -1,10 +1,9 @@
 <?php
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CourseController;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+
 Route::get('/', function () {
     return view('index');
 });
@@ -17,3 +16,4 @@ Route::get('/login', function () {
 })->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.check');
 
+Route::get('/courses/{id}', [CourseController::class, 'show']);
