@@ -15,7 +15,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="{{ route('index') }}">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Dash board</a>
@@ -25,11 +25,10 @@
         @if(session('user'))
     <span class="d-flex align-items-center ">Hello, {{ session('user') }}</span>
 
-   <button class="btn btn-outline-primary " type="submit"> <a href="{{ route('logout') }}" style="text-decoration: none;">Logout</a></button>
+   <a href="{{ route('logout') }}" style="text-decoration: none;"class="btn btn-outline-primary" >Logout</a>
  @else
-   <button class="btn btn-outline-primary" type="submit"> <a href="{{ route('login') }}" style="text-decoration: none;">Login</a></button>
-
-   <button class="btn btn-outline-primary" type="submit"> <a href="{{ route('register') }}" style="text-decoration: none;">Register</a></button>
+   <a href="{{ route('login') }}" style="text-decoration: none;"class="btn btn-outline-primary" >Login</a>
+ <a href="{{ route('register') }}" style="text-decoration: none;"class="btn btn-outline-primary" >Register</a>
  @endif
       </form>
     </div>
