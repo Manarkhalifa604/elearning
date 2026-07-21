@@ -15,4 +15,5 @@ Route::post('/register', [AuthController::class, 'register'])->name('register.st
 Route::get('/login', function () {
     return view('login');
 })->name('login');
+Route::post('/login', [AuthController::class, 'login'])->name('login.check');
 

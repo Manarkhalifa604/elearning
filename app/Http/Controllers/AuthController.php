@@ -2,22 +2,32 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
-    use App\Models\User;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
+    public function register(Request $request)
+    {
+        User::create([
+            'name' => $request->name,
+            'password' => $request->password,
+        ]);
 
-public function register(Request $request)
+        return redirect('/login');
+    }
+
+    public function login(Request $request)
 {
-    User::create([
-        'name' => $request->name,
-        'password' => Hash::make($request->password),
-    ]);
+    $user = User::where('name', $request->name)->first();
 
-    return redirect('/login');
+    if ($user && password_verify($request->password, $user->password)) {
+
+        session(['user' => $user->name]);
+
+        return redirect('/');
+    }
+
+    return back()->with('error', 'Name or Password is incorrect');
 }
 }
-
