@@ -3,16 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
 
  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <title>Document</title>
 </head>
 <body>
-<header>
-   <nav class="navbar navbar-expand-lg bg-body-tertiary">
+<header class=""> 
+  <nav class="navbar navbar-expand-lg bg-body-tertiary opacity-75  fixed-top w-100  ">
+    <nav class="navbar bg-body-tertiary">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="/images/e21f9341-d4df-4d96-a681-9760d9430cac.jpg" alt="..." width="30" height="24">
+    </a>
+  </div>
+</nav>
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">E-LEARNING</a>
+    <a class="navbar-brand" href="#">E-LEARNING WEBSITE</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -27,18 +33,30 @@
        
        
       </ul>
-      <form class="d-flex" role="search">
-        <button class="btn btn-outline-primary" type="submit"><a href="{{route('login')}}">login</a></button>
-        <button class="btn btn-outline-primary" type="submit"><a href="{{route('register')}}">Register</a></button>
+      <form class="d-flex gap-4 " role="search" style="text-">
+        @if(session('user'))
+    <span class="d-flex align-items-center ">Hello, {{ session('user') }}</span>
+
+   <button class="btn btn-outline-primary " type="submit"> <a href="{{ route('logout') }}" style="text-decoration: none;">Logout</a></button>
+@else
+   <button class="btn btn-outline-primary" type="submit"> <a href="{{ route('login') }}" style="text-decoration: none;">Login</a></button>
+
+   <button class="btn btn-outline-primary" type="submit"> <a href="{{ route('register') }}" style="text-decoration: none;">Register</a></button>
+@endif
       </form>
     </div>
   </div>
 </nav>
-  
 </header>
-
+<div style="
+    background-image: url('{{ asset('/images/e61e7c73-09c9-491c-8987-f9b4b7c1bc77.jpg') }}');
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;"
+ </div>
 
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    <script src="js/script.js"></script>
+    
 </body>
 </html>

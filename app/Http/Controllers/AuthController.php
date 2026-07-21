@@ -30,4 +30,9 @@ class AuthController extends Controller
 
     return back()->with('error', 'Name or Password is incorrect');
 }
+public function logout()
+{
+    session()->forget('user');
+    return redirect('/');
+}
 }
