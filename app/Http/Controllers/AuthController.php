@@ -11,7 +11,8 @@ class AuthController extends Controller
     {
         User::create([
             'name' => $request->name,
-            'password' => $request->password,
+            'password' => password_hash($request->password, PASSWORD_DEFAULT),
+            'role' => 'user',
         ]);
 
         return redirect('/login');
@@ -25,12 +26,9 @@ class AuthController extends Controller
 
             session([
                 'user' => $user->name,
-                'is_admin' => $user->is_admin,
+                'user_id' => $user->id,
+                'role' => $user->role,
             ]);
-
-            if ($user->is_admin) {
-                return redirect('/');
-            }
 
             return redirect('/');
         }
@@ -40,7 +38,11 @@ class AuthController extends Controller
 
     public function logout()
     {
-        session()->forget(['user', 'is_admin']);
+        session()->forget([
+            'user',
+            'user_id',
+            'role',
+        ]);
 
         return redirect('/');
     }

@@ -26,9 +26,17 @@ Route::get('/courses/{id}', [CourseController::class, 'show'])->name('courses.sh
 Route::get('/dashboard', function () {
 
     if (session('is_admin')) {
-        return view('admin.dashboard');
+        return redirect('/admin/dashboard');
     }
 
-    return view('user.dashboard');
+    return redirect('/user/dashboard');
 
 })->name('dashboard');
+
+Route::get('/admin/dashboard', function () {
+    return view('admin.dashboard');
+})->middleware('admin');
+
+Route::get('/user/dashboard', function () {
+    return view('user.dashboard');
+})->middleware('user');
