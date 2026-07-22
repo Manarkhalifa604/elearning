@@ -69,7 +69,7 @@
                                 <p>{{ $course->about }}</p>
 
                                 <h5 class="mt-4 mb-3">
-                                You will learn:
+                                    You will learn:
                                 </h5>
 
                                 <ul class="list-unstyled">
@@ -83,7 +83,6 @@
                                 </ul>
 
                             </div>
-
                             <div class="col-lg-4">
 
                                 <div class="card shadow-sm">
@@ -92,55 +91,55 @@
 
                                         <h5>Instructor</h5>
 
-                                    <div class="d-flex align-items-center mt-3">
+                                        <div class="d-flex align-items-center mt-3">
 
-                                    <img src="{{ asset($course->instructor_image) }}"
-                                        width="60"
-                                        height="60"
-                                        class="rounded-circle me-3"
-                                        alt="{{ $course->instructor_name }}">
+                                            <img src="{{ asset($course->instructor_image) }}"
+                                                width="60"
+                                                height="60"
+                                                class="rounded-circle me-3"
+                                                alt="{{ $course->instructor_name }}">
 
-                                    <div>
+                                            <div>
 
-                                        <h6 class="mb-0">
-                                            {{ $course->instructor_name }}
-                                        </h6>
+                                                <h6 class="mb-0">
+                                                    {{ $course->instructor_name }}
+                                                </h6>
 
-                                        <small class="text-muted">
-                                            {{ $course->instructor_job }}
-                                        </small>
+                                                <small class="text-muted">
+                                                    {{ $course->instructor_job }}
+                                                </small>
+
+                                            </div>
+
+                                        </div>
 
                                     </div>
 
                                 </div>
 
                             </div>
-
                         </div>
                     </div>
                     <!-- Course Content -->
+                     
                     <div class="tab-pane fade" id="content">
 
                         <div class="list-group">
+                            
                             @foreach(explode("\n", $course->course_content) as $lesson)
-                                @if(trim($lesson) != '')
+                                 @if(trim($lesson) != '')
                                     <div class="list-group-item">
                                         Lesson {{ $loop->iteration }} - {{ $lesson }}
                                     </div>
                                 @endif
                             @endforeach
-                            <!-- <div class="list-group-item">
-                                {{ $course->course_content }}
-                            </div> -->
                         </div>
-
-                    </div>
         
+                    </div>
+                        
                 </div>
             </div>
         </div>
-    
-
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     </body>
 </html>
