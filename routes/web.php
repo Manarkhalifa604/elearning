@@ -3,7 +3,6 @@
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CourseController;
-
 use App\Http\Controllers\HomeController;
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
@@ -23,3 +22,13 @@ Route::post('/login', [AuthController::class, 'login'])->name('login.check');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/courses/{id}', [CourseController::class, 'show'])->name('courses.show');
+
+Route::get('/dashboard', function () {
+
+    if (session('is_admin')) {
+        return view('admin.dashboard');
+    }
+
+    return view('user.dashboard');
+
+})->name('dashboard');

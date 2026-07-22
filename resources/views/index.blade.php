@@ -75,12 +75,13 @@
 <!-- home  -->
  <main>
   <div style="
-    background-image: url('{{ asset('/images/83fcb51a-b9bb-409b-a170-a5bdd1f52c45.jpg') }}');
+    background-image: url('{{ asset('/images/5d692a6b-e9eb-4ba4-b68d-677c05130701.jpg') }}');
     background-size: cover;
     background-position: center;
     width: 100vw;
     height: 100vh;">
   </div>
+  
  </main>
 
 
