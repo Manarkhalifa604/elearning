@@ -4,9 +4,9 @@ use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CourseController;
 
-Route::get('/', function () {
-    return view('index');
-})->name('index');
+use App\Http\Controllers\HomeController;
+
+Route::get('/', [HomeController::class, 'index'])->name('index');
 
 Route::get('/register', function () {
     return view('register');
@@ -22,4 +22,4 @@ Route::post('/login', [AuthController::class, 'login'])->name('login.check');
 
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::get('/courses/{id}', [CourseController::class, 'show']);
+Route::get('/courses/{id}', [CourseController::class, 'show'])->name('courses.show');
