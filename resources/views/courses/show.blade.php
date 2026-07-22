@@ -36,8 +36,14 @@
                         <img src="{{ asset('images/icons/students.svg') }}" alt="lessons" width="20" class="me-1">
                         {{ $course->students }} Students
                     </p>
-                    
-                    <button class="btn" style="background-color: #614DED; color: white;">Enroll Now</button>
+                
+                     <form action="{{ route('courses.enroll', $course->id) }}" method="POST">
+                            @csrf
+
+                        <button class="btn" style="background-color: #614DED; color: white;">
+                            Enroll Now
+                        </button>
+                    </form>
                 </div>
             </div>
             <hr class="my-5">

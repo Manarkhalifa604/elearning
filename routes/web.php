@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\HomeController;
 use App\Models\User;
+use App\Http\Controllers\EnrollmentController;
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
 
@@ -46,3 +47,6 @@ Route::get('/user/dashboard', function () {
     return view('user.dashboard', compact('user'));
 
 })->middleware('user');
+
+Route::post('/courses/{id}/enroll', [EnrollmentController::class, 'enroll'])
+    ->name('courses.enroll');
