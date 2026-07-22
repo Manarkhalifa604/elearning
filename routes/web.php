@@ -24,10 +24,11 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/courses/{id}', [CourseController::class, 'show'])->name('courses.show');
 
+
 Route::get('/admin/dashboard', function () {
     return view('admin.dashboard');
-});
+})->middleware('admin');
 
 Route::get('/user/dashboard', function () {
     return view('user.dashboard');
-});
+})->middleware('user');

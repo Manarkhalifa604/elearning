@@ -11,7 +11,8 @@ class AuthController extends Controller
     {
         User::create([
             'name' => $request->name,
-            'password' => $request->password,
+            'password' => password_hash($request->password, PASSWORD_DEFAULT),
+            'role' => 'user',
         ]);
 
         return redirect('/login');
