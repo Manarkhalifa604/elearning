@@ -18,7 +18,26 @@
           <a class="nav-link active" aria-current="page" href="{{ route('index') }}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Dash board</a>
+          
+          @if(session()->has('user'))
+
+            @if(session('role') == 'admin')
+              <a href="/admin/dashboard" class="nav-link">
+                Dashboard
+              </a>
+            @else
+              <a href="/user/dashboard" class="nav-link">
+                Dashboard
+              </a>
+            @endif
+
+          @else
+
+            <a href="/login" class="btn btn-primary">
+              Login
+            </a>
+
+          @endif
         </li>
       </ul>
       <form class="d-flex gap-4 " role="search" style="text-">

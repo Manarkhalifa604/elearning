@@ -29,11 +29,7 @@ class AuthController extends Controller
             'role' => $user->role,
             'user_id' => $user->id,
             ]);
-            if ($user->role == 'admin') {
-                return redirect('/admin/dashboard');
-            } 
-
-        return redirect('/user/dashboard');
+            return redirect('/');
     }
 
     return back()->with('error', 'Name or Password is incorrect');
