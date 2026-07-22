@@ -10,7 +10,7 @@ class AdminMiddleware
 {
     public function handle(Request $request, Closure $next): Response
     {
-        if (session('role') !== 'admin') {
+        if (session('role') !== 'Admin') {
             return redirect('/user/dashboard');
         }
 

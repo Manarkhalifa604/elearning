@@ -24,15 +24,17 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/courses/{id}', [CourseController::class, 'show'])->name('courses.show');
 
+
 Route::get('/dashboard', function () {
 
-    if (session('is_admin')) {
+    if (session('role') === 'admin') {
         return redirect('/admin/dashboard');
     }
 
     return redirect('/user/dashboard');
 
 })->name('dashboard');
+
 
 Route::get('/admin/dashboard', function () {
     return view('admin.dashboard');
