@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CourseController;
 
 use App\Http\Controllers\HomeController;
+use App\Models\User;
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
 
@@ -29,6 +30,11 @@ Route::get('/admin/dashboard', function () {
     return view('admin.dashboard');
 })->middleware('admin');
 
+
 Route::get('/user/dashboard', function () {
-    return view('user.dashboard');
+
+    $user = User::find(session('user_id'));
+
+    return view('user.dashboard', compact('user'));
+
 })->middleware('user');

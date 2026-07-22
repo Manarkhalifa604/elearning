@@ -46,65 +46,13 @@
 
         <h2>Welcome Back 👋</h2>
 
-        <h4>{{ session('user') }}</h4>
+        <h4>{{ $user->name }}</h4>
 
         <p class="mb-0">
             Keep learning and continue your journey.
         </p>
 
     </div>
-
-
-
-    <!-- Statistics -->
-
-    <div class="row mb-5">
-
-        <div class="col-md-4">
-
-            <div class="card stat-card shadow-sm">
-
-                <h1>3</h1>
-
-                <p class="text-muted mb-0">
-                    Enrolled Courses
-                </p>
-
-            </div>
-
-        </div>
-
-        <div class="col-md-4">
-
-            <div class="card stat-card shadow-sm">
-
-                <h1>25</h1>
-
-                <p class="text-muted mb-0">
-                    Lessons Completed
-                </p>
-
-            </div>
-
-        </div>
-
-        <div class="col-md-4">
-
-            <div class="card stat-card shadow-sm">
-
-                <h1>1</h1>
-
-                <p class="text-muted mb-0">
-                    Certificates
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
 
     <!-- My Courses -->
 
@@ -206,12 +154,12 @@
 
             <p>
                 <strong>Name:</strong>
-                {{ session('user') }}
+                {{ $user->name }}
             </p>
 
             <p>
                 <strong>Role:</strong>
-                {{ session('role') }}
+                {{ $user->role }}
             </p>
 
             <a href="#" class="btn btn-outline-primary">
