@@ -19,26 +19,31 @@ class AuthController extends Controller
     }
 
     public function login(Request $request)
-{
-    $user = User::where('name', $request->name)->first();
+    {
+        $user = User::where('name', $request->name)->first();
 
-    if ($user && password_verify($request->password, $user->password)) {
+        if ($user && password_verify($request->password, $user->password)) {
 
-        session([
-            'user' => $user->name,
-            'role' => $user->role,
-            'user_id' => $user->id,
+            session([
+                'user' => $user->name,
+                'user_id' => $user->id,
+                'role' => $user->role,
             ]);
+
             return redirect('/');
+        }
+
+        return back()->with('error', 'Name or Password is incorrect');
     }
 
-    return back()->with('error', 'Name or Password is incorrect');
-    
-}
+    public function logout()
+    {
+        session()->forget([
+            'user',
+            'user_id',
+            'role',
+        ]);
 
-public function logout()
-{
-    session()->forget('user');
-    return redirect('/');
-}
+        return redirect('/');
+    }
 }

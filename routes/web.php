@@ -3,7 +3,6 @@
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CourseController;
-
 use App\Http\Controllers\HomeController;
 use App\Models\User;
 
@@ -25,6 +24,15 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/courses/{id}', [CourseController::class, 'show'])->name('courses.show');
 
+Route::get('/dashboard', function () {
+
+    if (session('is_admin')) {
+        return redirect('/admin/dashboard');
+    }
+
+    return redirect('/user/dashboard');
+
+})->name('dashboard');
 
 Route::get('/admin/dashboard', function () {
     return view('admin.dashboard');
