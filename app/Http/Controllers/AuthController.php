@@ -23,13 +23,20 @@ class AuthController extends Controller
 
     if ($user && password_verify($request->password, $user->password)) {
 
-        session(['user' => $user->name]);
+        session([
+            'user' => $user->name,
+            'role' => $user->role,
+            'user_id' => $user->id,
+            ]);
+            if ($user->role == 'admin') {
+                return redirect('/admin/dashboard');
+            } 
 
-        return redirect('/');
+        return redirect('/user/dashboard');
     }
 
     return back()->with('error', 'Name or Password is incorrect');
-    return back()->with('error', 'Invalid name or password');
+    
 }
 
 public function logout()
