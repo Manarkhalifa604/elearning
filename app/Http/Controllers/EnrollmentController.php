@@ -21,3 +21,4 @@ class EnrollmentController extends Controller
         return redirect()->back()->with('success', 'Enrolled Successfully');
     }
 }
+$totalCourses = Course::count();

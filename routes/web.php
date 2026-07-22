@@ -44,7 +44,7 @@ Route::get('/admin/dashboard', function () {
 
 Route::get('/user/dashboard', function () {
 
-    $user = User::find(session('user_id'));
+    $user = User::with('courses')->find(session('user_id'));
 
     return view('user.dashboard', compact('user'));
 

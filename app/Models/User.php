@@ -40,4 +40,9 @@ public function courses()
         'course_id'
     );
 }
+
+public function enrollments()
+{
+    return $this->hasMany(Enrollment::class);
+}
 }

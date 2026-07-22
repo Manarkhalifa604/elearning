@@ -33,4 +33,9 @@ class Course extends Model
         'user_id'
     );
 }
+
+public function enrollments()
+{
+    return $this->hasMany(Enrollment::class);
+}
 };

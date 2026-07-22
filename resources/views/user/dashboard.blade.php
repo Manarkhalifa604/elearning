@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Dashboard</title>
+    <title>Admin Dashboard</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -38,7 +38,6 @@
 </head>
 @include('header')
 <body>
-
 <div class="container py-5">
 
     <!-- Welcome -->
@@ -63,81 +62,46 @@
 
     <div class="row g-4">
 
-        <div class="col-md-4">
+        @foreach($user->courses as $course)
 
-            <div class="card course-card shadow-sm">
+            <div class="col-md-4">
 
-                <img src="{{ asset('images/php.jpg') }}" class="card-img-top">
+                <div class="card course-card shadow-sm">
 
-                <div class="card-body">
+                    <img src="{{ asset($course->image) }}" class="card-img-top">
 
-                    <h5>PHP Course</h5>
+                    <div class="card-body">
 
-                    <p class="text-muted">
-                        Continue your learning.
-                    </p>
+                        <h5>{{ $course->title }}</h5>
 
-                    <a href="#" class="btn btn-primary w-100">
-                        Continue
-                    </a>
+                        <p class="text-muted">
+                            {{ $course->courses_description }}
+                        </p>
 
-                </div>
+                        <a href="{{ route('courses.show', $course->id) }}"
+                            class="btn btn-primary w-100">
+                            Continue
+                        </a>
 
-            </div>
-
-        </div>
-
-
-
-        <div class="col-md-4">
-
-            <div class="card course-card shadow-sm">
-
-                <img src="{{ asset('images/laravel.jpg') }}" class="card-img-top">
-
-                <div class="card-body">
-
-                    <h5>Laravel Course</h5>
-
-                    <p class="text-muted">
-                        Continue your learning.
-                    </p>
-
-                    <a href="#" class="btn btn-primary w-100">
-                        Continue
-                    </a>
+                    </div>
 
                 </div>
 
             </div>
 
-        </div>
+        @endforeach
 
+        @if($user->courses->count() == 0)
 
+            <div class="col-12">
 
-        <div class="col-md-4">
-
-            <div class="card course-card shadow-sm">
-
-                <img src="{{ asset('images/js.jpg') }}" class="card-img-top">
-
-                <div class="card-body">
-
-                    <h5>JavaScript Course</h5>
-
-                    <p class="text-muted">
-                        Continue your learning.
-                    </p>
-
-                    <a href="#" class="btn btn-primary w-100">
-                        Continue
-                    </a>
-
+                <div class="alert alert-info">
+                    You haven't enrolled in any course yet.
                 </div>
 
             </div>
 
-        </div>
+        @endif
 
     </div>
 

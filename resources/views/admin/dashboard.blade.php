@@ -18,6 +18,7 @@
         .stat-card h3 { font-size: 28px; font-weight: bold; margin-bottom: 0; color: #1e293b; }
     </style>
 </head>
+
 <body>
 
 <div class="container-fluid">
@@ -151,5 +152,6 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+@include('footer')
 </body>
 </html>
