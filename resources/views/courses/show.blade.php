@@ -122,21 +122,16 @@
                     <div class="tab-pane fade" id="content">
 
                         <div class="list-group">
-
-                        <div class="list-group-item">
-                        Lesson 1 - Introduction
-                        </div>
-
-                        <div class="list-group-item">
-                        Lesson 2 - Variables
-                        </div>
-
-                        <div class="list-group-item">
-                        Lesson 3 - Loops
-                        </div>
-
-                        <div class="list-group-item">
-                        Lesson 4 - Functions
+                            @foreach(explode("\n", $course->course_content) as $lesson)
+                                @if(trim($lesson) != '')
+                                    <div class="list-group-item">
+                                        Lesson {{ $loop->iteration }} - {{ $lesson }}
+                                    </div>
+                                @endif
+                            @endforeach
+                            <!-- <div class="list-group-item">
+                                {{ $course->course_content }}
+                            </div> -->
                         </div>
 
                     </div>
