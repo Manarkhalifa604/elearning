@@ -43,14 +43,16 @@ Route::get('/dashboard', function () {
 
 
 Route::get('/admin/dashboard', [DashboardController::class, 'index'])
+    ->middleware('admin')
     ->name('admin.dashboard');
 
 
 Route::delete('/admin/enrollments/{id}', [DashboardController::class, 'destroyEnrollment'])
+    ->middleware('admin')
     ->name('admin.enrollments.destroy');
 
 
 Route::get('/user/dashboard', function () {
     $user = User::find(session('user_id'));
     return view('user.dashboard', compact('user'));
-});
+})->middleware('user');
