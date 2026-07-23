@@ -1,5 +1,5 @@
 <header>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary opacity-75 fixed-top">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary opacity- fixed-top">
         <div class="container-fluid">
 
             <!-- Logo -->
@@ -69,19 +69,22 @@
                         </span>
 
                         <a href="{{ route('logout') }}"
-                            class="btn btn-outline-primary">
+                            class="btn btn-outline-primary"
+                            style="background-color: #614DED; color: white; border: none;">
                             Logout
                         </a>
 
                     @else
 
                         <a href="{{ route('login') }}"
-                            class="btn btn-outline-primary">
+                            class="btn btn-outline-primary"
+                            style="background-color: #614DED; color: white; border: none;">
                             Login
                         </a>
 
                         <a href="{{ route('register') }}"
-                            class="btn btn-primary">
+                            class="btn btn-primary"
+                            style="background-color: #614DED; color: white; border: none;">
                             Register
                         </a>
 

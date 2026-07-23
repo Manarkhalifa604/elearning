@@ -81,6 +81,19 @@
     width: 100vw;
     height: 100vh;">
   </div>
+      <div class="position-absolute top-0 start-0 w-100 h-100 container
+                d-flex flex-column justify-content-center align-items-start 
+                text-center text-white">
+
+        <h1 class="display-3 fw-bold">
+            Welcome To Our Website
+        </h1>
+
+        <p class="fs-4">
+            Learn new skills anytime, anywhere with our online courses.
+        </p>
+
+    </div>
   
  </main>
 
