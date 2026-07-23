@@ -9,13 +9,19 @@ class AuthController extends Controller
 {
     public function register(Request $request)
     {
-        User::create([
+        $user = User::create([
             'name' => $request->name,
             'password' => password_hash($request->password, PASSWORD_DEFAULT),
             'role' => 'user',
         ]);
 
-        return redirect('/login');
+        session([
+            'user' => $user->name,
+            'user_id' => $user->id,
+            'role' => $user->role,
+        ]);
+
+        return redirect('/');
     }
 
     public function login(Request $request)

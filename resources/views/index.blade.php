@@ -81,7 +81,7 @@
     width: 100vw;
     height: 100vh;">
   </div>
-      <div class="position-absolute top-0 start-0 w-100 h-100 container
+      <div class="position-absolute top-0 start-0 w-50 h-100 container
                 d-flex flex-column justify-content-center align-items-start 
                 text-center text-white">
 
