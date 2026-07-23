@@ -21,7 +21,7 @@
                 </div>
                 <div class="col-lg-6 m-2" style="max-width:420px">
                     <h1 style="font-size: 45px; font-weight: 600;">{{ $course->title }}</h1>
-                    <span class="badge mb-2" style="background-color: #E2FDE7; color: #6D937A;">{{ $course->level }}</span>
+                    <span class="badge mb-2 {{ $course->level == 'Beginner' ? 'bg-success' : 'bg-warning text-dark' }}">{{ $course->level }}</span>
                     <p class="jus">{{ $course->courses_description }}</p>
 
                     <p>
