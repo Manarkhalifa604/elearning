@@ -158,9 +158,7 @@
                                     <td>
                                         <div class="d-flex gap-2">
                                            
-                                            <a href="#" class="btn btn-sm btn-outline-warning rounded-3" title="Edit">
-                                                <i class="fa-solid fa-pen-to-square"></i> Edit
-                                            </a>
+                                           
 
                                            
                                             <form action="{{ route('admin.enrollments.destroy', $enrollment->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this registration?');">

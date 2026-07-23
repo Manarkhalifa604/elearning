@@ -89,7 +89,7 @@
             Welcome To Our Website
         </h1>
 
-        <p class="fs-4">
+        <p class="fs-4 ">
             Learn new skills anytime, anywhere with our online courses.
         </p>
 

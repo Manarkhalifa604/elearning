@@ -32,6 +32,7 @@ Route::post('/courses/{id}/enroll', [EnrollmentController::class, 'enroll'])
     ->name('courses.enroll');
 
 
+    
 Route::get('/dashboard', function () {
     if (session('role') === 'admin' || (auth()->check() && auth()->user()->role === 'admin')) {
         return redirect()->route('admin.dashboard');
